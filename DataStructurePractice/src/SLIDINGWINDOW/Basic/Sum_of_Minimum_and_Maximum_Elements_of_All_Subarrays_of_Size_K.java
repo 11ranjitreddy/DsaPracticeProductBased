@@ -1,0 +1,3 @@
+package SLIDINGWINDOW.Basic;
+public class Sum_of_Minimum_and_Maximum_Elements_of_All_Subarrays_of_Size_K{}
+;

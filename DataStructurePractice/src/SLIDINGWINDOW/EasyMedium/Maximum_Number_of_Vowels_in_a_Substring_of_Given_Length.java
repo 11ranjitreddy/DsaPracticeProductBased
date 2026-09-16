@@ -1,0 +1,3 @@
+package SLIDINGWINDOW.EasyMedium;
+public class Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length{}
+;

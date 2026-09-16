@@ -1,0 +1,3 @@
+package SLIDINGWINDOW.EasyMedium;
+public class Number_of_Sub_arrays_of_Size_K_and_Average_Greater_than_or_Equal_to_Threshold{}
+;

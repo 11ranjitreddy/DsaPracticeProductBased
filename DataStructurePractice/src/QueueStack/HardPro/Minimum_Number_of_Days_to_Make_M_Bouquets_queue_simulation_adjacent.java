@@ -1,0 +1,3 @@
+package QueueStack.HardPro;
+public class Minimum_Number_of_Days_to_Make_M_Bouquets_queue_simulation_adjacent{}
+;

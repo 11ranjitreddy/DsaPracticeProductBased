@@ -1,0 +1,3 @@
+package GRAPHS.EasyMedium;
+public class All_Paths_From_Source_to_Target{}
+;

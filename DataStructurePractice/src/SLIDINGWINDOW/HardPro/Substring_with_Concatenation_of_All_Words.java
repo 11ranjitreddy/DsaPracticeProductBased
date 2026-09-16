@@ -1,0 +1,3 @@
+package SLIDINGWINDOW.HardPro;
+public class Substring_with_Concatenation_of_All_Words{}
+;
