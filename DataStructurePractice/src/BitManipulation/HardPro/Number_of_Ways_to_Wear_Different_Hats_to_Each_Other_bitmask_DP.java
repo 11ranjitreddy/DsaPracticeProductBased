@@ -1,3 +1,0 @@
-package BitManipulation.HardPro;
-public class Number_of_Ways_to_Wear_Different_Hats_to_Each_Other_bitmask_DP{}
-;

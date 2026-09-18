@@ -1,3 +1,0 @@
-package HashMapHashing.HardPro;
-public class Max_Points_on_a_Line{}
-;

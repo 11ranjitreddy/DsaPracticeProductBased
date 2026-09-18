@@ -1,3 +1,0 @@
-package HashMapHashing.EasyMedium;
-public class Find_the_Difference{}
-;
