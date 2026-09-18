@@ -131,8 +131,35 @@ public class Construction {
             if(root.data<right)
                 printNodesRange(root.right,left,right);
         }
-        int KthSmallesNode(Node root,int k){
+        int Floor(Node root,int key){
+           int ans=-1;
+           while (root!=null){
+               if(root.data==key)
+                   return root.data;
+               if(root.data<key){
+                   ans=root.data;
+                   root=root.right;
+               }else{
+                   root=root.left;
+               }
+           }
+           return ans;
+        }
+        int CeilValue(Node root,int key){
+            int ans=-1;
+            while (root!=null){
+                if(root.data==key)
+                    return root.data;
 
+                if(root.data>key){
+                    ans=root.data;
+                    root=root.left;
+
+                }else {
+                    root=root.right;
+                }
+            }
+            return ans;
         }
 
     }
