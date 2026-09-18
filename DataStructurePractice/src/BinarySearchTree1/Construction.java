@@ -70,6 +70,70 @@ public class Construction {
             }
             return root;
         }
+        int height(Node root){
+            if(root==null)return 0;
+            return 1+Math.max(height(root.left),height(root.right));
+        }
+        int countNodes(Node root){
+            if(root==null)return 0;
+
+            return 1+countNodes(root.left)+countNodes(root.right);
+        }
+
+        int countLeafNodes(Node root){
+            if(root==null)return 0;
+            if(root.left==null && root.right==null)return 1;
+            return countLeafNodes(root.right)+countLeafNodes(root.left);
+        }
+        int countNonleafNode(Node root){
+            if(root==null)return 0;
+            if(root.left==null && root.right==null)return 0;
+
+            return 1+countNonleafNode(root.left)+countNonleafNode(root.right);
+        }
+        int sumOfAllNodes(Node root){
+            if(root==null)return 0;
+
+            return root.data+sumOfAllNodes(root.right)+sumOfAllNodes(root.left);
+        }
+        int DifferenceMaximumAndMinimum(){
+
+            int min=(FindMaximum(root).data);
+            int max=(FindMinimum(root).data);
+            return min-max;
+
+        }
+        int depthOfGivenNode(Node root,int key){
+            int d=0;
+            while (root!=null){
+                if(root.data==key)
+                    return d;
+                if(key<root.data)
+                    root=root.right;
+                else
+                    root=root.left;
+
+                d++;
+            }
+            return -1;
+        }
+        int NodesAtLevel(Node root,int k){
+            if(root==null)return 0;
+            if(k==0)return 1;
+            return NodesAtLevel(root.left,k-1)+NodesAtLevel(root.right,k-1);
+        }
+        void printNodesRange(Node root,int left,int right){
+            if(root==null)return;
+            if(root.data>left)
+                printNodesRange(root.left,left,right);
+            if(root.data>=left && root.data<=right)
+                System.out.print(root.data+" ");
+            if(root.data<right)
+                printNodesRange(root.right,left,right);
+        }
+        int KthSmallesNode(Node root,int k){
+
+        }
 
     }
     public static void main(String  args[]){
@@ -89,5 +153,8 @@ public class Construction {
         System.out.println(b.FindMinimum(b.root).data);
         b.delete(b.root,20);
         b.print(b.root);
+        System.out.println();
+        System.out.println(b.height(b.root));
+        System.out.println(b.countNodes(b.root));
     }
 }
