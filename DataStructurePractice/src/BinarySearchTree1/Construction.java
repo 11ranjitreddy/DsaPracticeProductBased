@@ -1,6 +1,6 @@
 package BinarySearchTree1;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Construction {
     public static class Node{
@@ -109,9 +109,9 @@ public class Construction {
                 if(root.data==key)
                     return d;
                 if(key<root.data)
-                    root=root.right;
-                else
                     root=root.left;
+                else
+                    root=root.right;
 
                 d++;
             }
@@ -161,12 +161,63 @@ public class Construction {
             }
             return ans;
         }
+        void Leftview(Node root){
+            if(root==null)return;
 
+            Queue<Node> q=new LinkedList<>();
+
+            q.add(root);
+            while(!q.isEmpty()){
+
+                int size=q.size();
+                for(int i=0;i<size;i++){
+                    Node curr=q.poll();
+                    if(i==0)
+                        System.out.print(curr.data+" ");
+                    if(curr.left!=null)
+                        q.add(curr.left);
+                    if(curr.right!=null)
+                        q.add(curr.right);
+                }
+            }
+        }
+        void righview(Node root){
+            if(root==null)return;
+            Queue<Node>q= new LinkedList<>();
+            q.add(root);
+            while(!q.isEmpty()){
+                int size=q.size();
+                for(int i=0;i<size;i++){
+                    Node curr=q.poll();
+                    if(i==size-1)
+                        System.out.print(curr.data+" ");
+
+                    if(curr.left!=null)
+                       q.add(curr.left);
+                    if(curr.right!=null)
+                        q.add(curr.right);
+                }
+            }
+        }
+        void levelOrder(Node root){
+            if(root==null)return;
+            Queue<Node> q=new LinkedList<>();
+            q.add(root);
+            while (!q.isEmpty()){
+                Node curr=q.poll();
+                System.out.print(curr.data+" ");
+
+                if(curr.left!=null)
+                    q.add(curr.left);
+                if(curr.right!=null)
+                    q.add(curr.right);
+            }
+        }
     }
     public static void main(String  args[]){
         BST b=new BST();
 
-        int a[]={50,10,20,30,25,15,25,35,60,70,80,90,55,65,78,85,95};
+        int a[]={50,10,20,30,25,15,35,60,70,80,90,55,65,78,85,95};
         for(int i=0;i<a.length;i++){
             int element=a[i];
             b.root=b.insert(b.root,element);
@@ -183,5 +234,24 @@ public class Construction {
         System.out.println();
         System.out.println(b.height(b.root));
         System.out.println(b.countNodes(b.root));
+        System.out.println(b.countNodes(b.root));
+        System.out.println(b.countLeafNodes(b.root));
+        System.out.println(b.countNonleafNode(b.root));
+        System.out.println(b.sumOfAllNodes(b.root));
+        System.out.println(b.DifferenceMaximumAndMinimum());
+        System.out.println(b.depthOfGivenNode(b.root,65));
+        System.out.println(b.NodesAtLevel(b.root,2));
+        b.printNodesRange(b.root,10,55);
+        System.out.println();
+        b.Leftview(b.root);
+        System.out.println();
+        b.righview(b.root);
+        System.out.println(b.Floor(b.root,40));
+        System.out.println(b.CeilValue(b.root,56));
+        b.levelOrder(b.root);
+        System.out.println();
+
+
+
     }
 }
