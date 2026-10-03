@@ -19,7 +19,8 @@ public class DiagnaolSum {
             sum+=a[i][i];
             sum+=a[i][n-1-i];
         }
-        sum-=a[n/2][n/2];
+        if(n%2!=0){
+        sum-=a[n/2][n/2];}
         System.out.println(sum);
     }
 }
